@@ -20,5 +20,7 @@ jobs:
     - name: Build and push
       uses: docker/build-push-action@v5
       with:
+        context: .
+        file: ./app/Dockerfile
         push: true
         tags: nagoregomez/as-laboratorio-8-web
