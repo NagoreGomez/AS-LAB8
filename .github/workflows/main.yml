@@ -46,3 +46,13 @@ jobs:
         kubectl rollout restart deployment web-deployment.yaml 
         kubectl apply -f db-deployment.yaml
         kubectl rollout restart deployment db-deployment.yaml 
+
+    - name: 6. Deploy web deployment
+      run: kubectl apply -f web-deployment.yaml
+    - name: 6. Restart web deployment
+      run: kubectl rollout restart deployment web-deployment
+
+    - name: 6. Deploy db deployment
+      run: kubectl apply -f db-deployment.yaml
+    - name: 6. Restart db deployment
+      run: kubectl rollout restart deployment db-deployment
