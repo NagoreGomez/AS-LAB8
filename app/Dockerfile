@@ -12,13 +12,13 @@ ENV FLASK_RUN_HOST=0.0.0.0
 RUN apk add --no-cache gcc musl-dev linux-headers 
   
 # Copia el archivo requirements.txt al directorio /code 
-COPY app/requirements.txt /code/ 
+COPY requirements.txt /code/ 
   
 # Instala las dependencias de Python desde el archivo requirements.txt 
 RUN pip install -r requirements.txt 
   
 # Copia el archivo app.py al directorio /code 
-COPY app/app.py /code/ 
+COPY app.py /code/ 
  
 # Establece el comando de arranque 
 CMD flask run 
