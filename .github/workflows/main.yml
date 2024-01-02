@@ -24,3 +24,9 @@ jobs:
         file: ./app/Dockerfile
         push: true
         tags: nagoregomez/as-laboratorio-8-web
+        
+    - name: Authenticate with Google Cloud
+      uses: google-github-actions/auth@v1
+      with:
+        credentials_json: ${{ secrets.GCLOUD_TOKEN }}
+        project_id: ${{ secrets.GCLOUD_PROJECT_ID }}
