@@ -42,11 +42,11 @@ jobs:
         location: us-central1
 
     - name: 6. Deploy web deployment
-      run: kubectl apply -f web-deployment.yaml
+      run: kubectl apply -f k8s/web-deployment.yaml
     - name: 6. Restart web deployment
       run: kubectl rollout restart deployment web-deployment
 
     - name: 6. Deploy db deployment
-      run: kubectl apply -f db-deployment.yaml
+      run: kubectl apply -f k8s/db-deployment.yaml
     - name: 6. Restart db deployment
       run: kubectl rollout restart deployment db-deployment
