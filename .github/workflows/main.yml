@@ -41,12 +41,6 @@ jobs:
         cluster_name: autopilot-cluster-1
         location: us-central1
 
-    - name: 6. Deploy Kubernetes objects
-      run: kubectl apply -f web-deployment.yaml 
-        kubectl rollout restart deployment web-deployment.yaml 
-        kubectl apply -f db-deployment.yaml
-        kubectl rollout restart deployment db-deployment.yaml 
-
     - name: 6. Deploy web deployment
       run: kubectl apply -f web-deployment.yaml
     - name: 6. Restart web deployment
