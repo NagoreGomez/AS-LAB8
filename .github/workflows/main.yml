@@ -18,13 +18,10 @@ jobs:
         username: ${{secrets.DOCKERHUB_USERNAME}}
         password: ${{secrets.DOCKERHUB_TOKEN}}
         
-    - name: 2. Build and push
-      uses: docker/build-push-action@v5
-      with:
-        context: .
-        file: ./app/Dockerfile
-        push: true
-        tags: nagoregomez/as-laboratorio-8-web
+    - name: 2. Build 
+      run: docker build -t nagoregomez/as-laboratorio-8-web ./app
+    - name: 2. Push
+      run: docker push nagoregomez/as-laboratorio-8-web
         
     - name: 3. Authenticate with Google Cloud
       uses: google-github-actions/auth@v1
