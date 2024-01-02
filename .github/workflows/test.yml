@@ -1,0 +1,19 @@
+name: testWorkflow
+
+on:
+  push:
+    branches:
+      - '*'
+      - '!main'
+jobs:
+  pasos:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: 1. Descargar repo
+      uses: actions/checkout@v4
+
+    - name: 2. Pruebas
+      uses: advanced-security/python-lint-code-scanning-action@v1
+      with:
+        linter: pylint
