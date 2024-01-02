@@ -43,10 +43,10 @@ jobs:
 
     - name: 6. Deploy web deployment
       run: kubectl apply -f k8s/web-deployment.yaml
-    - name: 6. Restart web deployment
+    - name: 6. Restart web 
       run: kubectl rollout restart deployment web-deployment
 
     - name: 6. Deploy db deployment
       run: kubectl apply -f k8s/db-deployment.yaml
-    - name: 6. Restart db deployment
+    - name: 6. Restart db 
       run: kubectl rollout restart deployment db-deployment
