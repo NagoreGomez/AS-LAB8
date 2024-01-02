@@ -5,9 +5,15 @@ on:
     branches:
       - main
 jobs:
-  tarea1:
+  tareas:
     runs-on: ubuntu-latest
 
     steps:
     - name: Descargar repositorio
       uses: actions/checkout@v4
+      
+    - name: Login DockerHub
+      uses: docker/login-action@v3
+      with:
+        username: ${{secrets.DOCKERHUB_USERNAME}}
+        password: ${{secrets.DOCKERHUB_TOKEN}}
