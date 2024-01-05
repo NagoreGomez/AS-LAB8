@@ -8,6 +8,9 @@ on:
 jobs:
   pasos:
     runs-on: ubuntu-latest
+    
+    permissions:
+      security-events: write
 
     steps:
     - name: 1. Descargar repo
