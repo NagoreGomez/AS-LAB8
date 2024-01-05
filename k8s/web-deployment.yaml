@@ -15,6 +15,7 @@ spec:
       containers:
       - name: web
         image: nagoregomez/as-laboratorio-8-web
+        imagePullPolicy: Always
         ports:
         - containerPort: 5000
 ---
